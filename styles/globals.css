@@ -287,12 +287,6 @@ p {
   margin-top: 2px;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
 .site-footer {
   margin-top: 20px;
   color: var(--muted);
@@ -309,7 +303,6 @@ p {
   }
 
   .hero-grid,
-  .contact-grid,
   .link-groups {
     grid-template-columns: 1fr;
   }

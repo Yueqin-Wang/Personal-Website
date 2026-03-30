@@ -5,7 +5,6 @@ const defaultNavItems = [
   { href: '/', label: 'Home' },
   { href: '/research', label: 'Research' },
   { href: '/resume', label: 'CV' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 export default function SiteLayout({ title, subtitle, site, children }) {

@@ -13,7 +13,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_FILE = REPO_ROOT / "content" / "site-content.md"
 CONTENT_FILE_RELATIVE = CONTENT_FILE.relative_to(REPO_ROOT).as_posix()
-REQUIRED_SECTIONS = {"site", "home", "research", "resume", "contact"}
+REQUIRED_SECTIONS = {"site", "home", "research", "resume"}
 SECTION_PATTERN = re.compile(
     r"^##\s+([a-z0-9-]+)\s*$([\s\S]*?)(?=^##\s+[a-z0-9-]+\s*$|\Z)",
     re.MULTILINE,

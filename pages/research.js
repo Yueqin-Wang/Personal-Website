@@ -24,11 +24,6 @@ export default function Research({ site, pageContent }) {
           </div>
         ))}
       </section>
-
-      <section className="card">
-        <h2>{pageContent.focus.sectionTitle}</h2>
-        <p>{pageContent.focus.body}</p>
-      </section>
     </SiteLayout>
   )
 }

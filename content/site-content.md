@@ -13,8 +13,7 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
   "navigation": [
     { "href": "/", "label": "Home" },
     { "href": "/research", "label": "Research" },
-    { "href": "/resume", "label": "CV" },
-    { "href": "/contact", "label": "Contact" }
+    { "href": "/resume", "label": "CV" }
   ]
 }
 ```
@@ -27,7 +26,7 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
   "subtitle": "Incoming PhD student in Emory Econ · IO and Health Economics",
   "hero": {
     "sectionTitle": "Research Interests",
-    "body": "My research focuses on industrial organization and health economics. I study how policy design and performance incentives shape provider and individual behavior using administrative data and quasi-experimental methods."
+    "body": "My research focuses on industrial organization and health economics. I study technological diffusion within hospitals, drug development, the effects of AI adoption in hospitals, interactions among physicians, and productivity within hospitals."
   },
   "ctaButtons": [
     { "href": "/research", "label": "View Research", "variant": "primary" },
@@ -82,10 +81,6 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
         ]
       }
     ]
-  },
-  "summary": {
-    "sectionTitle": "One-Sentence Research Summary",
-    "body": "I examine how policy rules and metrics change real behavior and reporting, combining theory with quasi-experimental evidence from rich administrative data."
   }
 }
 ```
@@ -115,11 +110,7 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
       "meta": "CESifo Working Paper No. 12030 · with Zehao Lin, Ying Liu, Lutz Sager",
       "summary": "This study identifies the impact of air pollution on sentiment using city-day panel data from Japanese cities and wind-based instruments for PM2.5/PM10. The findings show sizable declines in sentiment, especially for negative emotions such as anger, anxiety, and sadness."
     }
-  ],
-  "focus": {
-    "sectionTitle": "Current Research Focus",
-    "body": "I work on applied microeconomics questions in industrial organization and health economics, with interests in policy design, incentives, and behavioral responses in administrative data."
-  }
+  ]
 }
 ```
 
@@ -127,10 +118,15 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
 
 ```json
 {
-  "title": "Resume / CV",
+  "title": "CV",
   "subtitle": "Education, Research Experience, and Skills",
   "educationTitle": "Education",
   "education": [
+    {
+      "time": "Starting 08/2026",
+      "institution": "Emory University",
+      "detail": "Ph.D. in Economics · Atlanta, GA, USA"
+    },
     {
       "time": "01/2024 - 12/2024",
       "institution": "University of Wisconsin-Madison",
@@ -161,30 +157,6 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
   "skills": [
     "Languages: Mandarin Chinese (Native), English (Fluent)",
     "Programming: R, Python, Stata, ArcGIS, QGIS, LaTeX"
-  ]
-}
-```
-
-## contact
-
-```json
-{
-  "title": "Contact",
-  "subtitle": "Feel free to reach out for research discussions or collaboration",
-  "primaryContactTitle": "Primary Contact",
-  "email": "pancrecon123@gmail.com",
-  "researchAreas": "Industrial Organization, Health Economics",
-  "location": "Madison, WI, USA / Beijing, China",
-  "paperLinksTitle": "Paper Links",
-  "paperLinks": [
-    {
-      "label": "Credit Collections Paper",
-      "href": "https://www.dropbox.com/scl/fi/4u5oc5xnglbl7cyadyjul/Credit.pdf?rlkey=mxqnt2oi349s1ssl3rrebf0x0&st=9ekqtrg7&dl=0"
-    },
-    {
-      "label": "Air Pollution & Sentiment Paper",
-      "href": "https://www.dropbox.com/scl/fi/ckhp4eq5tq1ufbrblibao/cesifo1_wp12030.pdf?rlkey=qvnazf0ih85r4eidet603jlux&st=07teihue&dl=0"
-    }
   ]
 }
 ```

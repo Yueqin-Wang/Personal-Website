@@ -70,11 +70,6 @@ export default function Home({ site, pageContent }) {
           ))}
         </div>
       </section>
-
-      <section className="card">
-        <h2>{pageContent.summary.sectionTitle}</h2>
-        <p>{pageContent.summary.body}</p>
-      </section>
     </SiteLayout>
   )
 }
