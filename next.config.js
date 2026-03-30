@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const repoName = 'Personal-Website'
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
-  basePath: '/Cr-Pan-Web',
-  assetPrefix: '/Cr-Pan-Web/',
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
   trailingSlash: true,
 }
 

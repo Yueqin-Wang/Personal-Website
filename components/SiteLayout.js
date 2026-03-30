@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -13,11 +14,20 @@ export default function SiteLayout({ title, subtitle, site, children }) {
   const kicker = site?.kicker ?? 'Personal Academic Website'
   const footerName = site?.footerName ?? title
   const footerLastUpdated = site?.footerLastUpdated
+  const pageTitle = footerName === title ? title : `${title} | ${footerName}`
+  const pageDescription = subtitle ?? kicker
 
   return (
     <div className="site-shell">
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
       <div className="bg-shape bg-shape-a" />
       <div className="bg-shape bg-shape-b" />
+
       <div className="container">
         <header className="site-header card">
           <div>
@@ -25,9 +35,11 @@ export default function SiteLayout({ title, subtitle, site, children }) {
             <h1>{title}</h1>
             {subtitle ? <p className="subtitle">{subtitle}</p> : null}
           </div>
+
           <nav className="top-nav" aria-label="Main navigation">
             {navigation.map((item) => {
               const active = router.pathname === item.href
+
               return (
                 <Link
                   key={item.href}
@@ -41,12 +53,12 @@ export default function SiteLayout({ title, subtitle, site, children }) {
           </nav>
         </header>
 
-        <main>{children}</main>
+        <main className="content-stack">{children}</main>
 
         <footer className="site-footer">
           <p>
-            © {new Date().getFullYear()} {footerName}
-            {footerLastUpdated ? ` · Last updated: ${footerLastUpdated}` : ''}
+            Copyright {new Date().getFullYear()} {footerName}
+            {footerLastUpdated ? ` | Last updated: ${footerLastUpdated}` : ''}
           </p>
         </footer>
       </div>

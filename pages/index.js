@@ -4,63 +4,103 @@ import { makePageStaticProps } from '../lib/siteContent'
 
 export const getStaticProps = makePageStaticProps('home')
 
+function ActionButton({ href, label, variant }) {
+  const className = variant === 'secondary' ? 'btn btn-secondary' : 'btn btn-primary'
+  const isExternal = href.startsWith('http') || href.startsWith('mailto:')
+
+  if (isExternal) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noreferrer">
+        {label}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  )
+}
+
 export default function Home({ site, pageContent }) {
   return (
-    <SiteLayout
-      title={pageContent.title}
-      subtitle={pageContent.subtitle}
-      site={site}
-    >
+    <SiteLayout title={pageContent.title} subtitle={pageContent.subtitle} site={site}>
       <section className="card hero-grid">
-        <div>
-          <h2>{pageContent.hero.sectionTitle}</h2>
-          <p>{pageContent.hero.body}</p>
+        <div className="hero-copy">
+          <p className="section-eyebrow">{pageContent.hero.sectionTitle}</p>
+          {pageContent.hero.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <div className="tag-row" aria-label="Research topics">
+            {pageContent.hero.tags.map((tag) => (
+              <span className="tag" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
           <div className="cta-row">
             {pageContent.ctaButtons.map((button) => (
-              <Link
-                key={`${button.href}-${button.label}`}
-                href={button.href}
-                className={button.variant === 'secondary' ? 'btn btn-secondary' : 'btn btn-primary'}
-              >
-                {button.label}
-              </Link>
+              <ActionButton key={`${button.href}-${button.label}`} {...button} />
             ))}
           </div>
         </div>
-        <div className="meta-list">
-          {pageContent.metaItems.map((item) => (
-            <p key={item.label}>
-              <span>{item.label}</span>
-              {item.value}
-            </p>
+
+        <div className="meta-panel">
+          <h2>Quick View</h2>
+          <div className="meta-list">
+            {pageContent.metaItems.map((item) => (
+              <p key={item.label}>
+                <span>{item.label}</span>
+                {item.value}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-title-row">
+          <h2>{pageContent.highlightsTitle}</h2>
+        </div>
+        <div className="highlight-grid">
+          {pageContent.highlights.map((item) => (
+            <article className="card highlight-card" key={item.title}>
+              <p className="section-eyebrow">{item.title}</p>
+              <p>{item.description}</p>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="card">
-        <h2>{pageContent.recentUpdatesTitle}</h2>
-        <ul className="clean-list">
-          {pageContent.recentUpdates.map((item) => (
-            <li key={item}>{item}</li>
+        <div className="section-title-row">
+          <h2>{pageContent.featuredResearchTitle}</h2>
+          <Link href="/research" className="text-link">
+            Browse all research
+          </Link>
+        </div>
+        <div className="feature-grid">
+          {pageContent.featuredResearch.map((item) => (
+            <article className="feature-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p className="paper-meta">{item.meta}</p>
+              <p>{item.summary}</p>
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section className="card">
-        <h2>{pageContent.recommendedLinks.sectionTitle}</h2>
+        <h2>{pageContent.linksTitle}</h2>
         <div className="link-groups">
-          {pageContent.recommendedLinks.groups.map((group) => (
+          {pageContent.linkGroups.map((group) => (
             <div className="link-group" key={group.title}>
               <h3>{group.title}</h3>
               <ul className="link-list">
                 {group.links.map((item) => (
                   <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="text-link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={item.href} className="text-link" target="_blank" rel="noreferrer">
                       {item.label}
                     </a>
                   </li>
