@@ -1,15 +1,19 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const navItems = [
+const defaultNavItems = [
   { href: '/', label: 'Home' },
   { href: '/research', label: 'Research' },
   { href: '/resume', label: 'CV' },
   { href: '/contact', label: 'Contact' },
 ]
 
-export default function SiteLayout({ title, subtitle, children }) {
+export default function SiteLayout({ title, subtitle, site, children }) {
   const router = useRouter()
+  const navigation = site?.navigation?.length ? site.navigation : defaultNavItems
+  const kicker = site?.kicker ?? 'Personal Academic Website'
+  const footerName = site?.footerName ?? title
+  const footerLastUpdated = site?.footerLastUpdated
 
   return (
     <div className="site-shell">
@@ -18,12 +22,12 @@ export default function SiteLayout({ title, subtitle, children }) {
       <div className="container">
         <header className="site-header card">
           <div>
-            <p className="kicker">Personal Academic Website</p>
+            <p className="kicker">{kicker}</p>
             <h1>{title}</h1>
             {subtitle ? <p className="subtitle">{subtitle}</p> : null}
           </div>
           <nav className="top-nav" aria-label="Main navigation">
-            {navItems.map((item) => {
+            {navigation.map((item) => {
               const active = router.pathname === item.href
               return (
                 <Link
@@ -41,7 +45,10 @@ export default function SiteLayout({ title, subtitle, children }) {
         <main>{children}</main>
 
         <footer className="site-footer">
-          <p>© {new Date().getFullYear()} Congrong Pan · Last updated: February 2026</p>
+          <p>
+            © {new Date().getFullYear()} {footerName}
+            {footerLastUpdated ? ` · Last updated: ${footerLastUpdated}` : ''}
+          </p>
         </footer>
       </div>
     </div>

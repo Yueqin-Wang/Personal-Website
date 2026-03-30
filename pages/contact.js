@@ -1,39 +1,33 @@
 import SiteLayout from '../components/SiteLayout'
+import { makePageStaticProps } from '../lib/siteContent'
 
-export default function Contact() {
+export const getStaticProps = makePageStaticProps('contact')
+
+export default function Contact({ site, pageContent }) {
   return (
-    <SiteLayout title="Contact" subtitle="Feel free to reach out for research discussions or collaboration">
+    <SiteLayout title={pageContent.title} subtitle={pageContent.subtitle} site={site}>
       <section className="card contact-grid">
         <div>
-          <h2>Primary Contact</h2>
+          <h2>{pageContent.primaryContactTitle}</h2>
           <p>
             Email:{' '}
-            <a href="mailto:pancrecon123@gmail.com" className="text-link">
-              pancrecon123@gmail.com
+            <a href={`mailto:${pageContent.email}`} className="text-link">
+              {pageContent.email}
             </a>
           </p>
-          <p>Research Areas: Industrial Organization, Health Economics</p>
-          <p>Location: Madison, WI, USA / Jinan, China</p>
+          <p>Research Areas: {pageContent.researchAreas}</p>
+          <p>Location: {pageContent.location}</p>
         </div>
         <div>
-          <h2>Paper Links</h2>
+          <h2>{pageContent.paperLinksTitle}</h2>
           <ul className="clean-list">
-            <li>
-              <a
-                href="https://www.dropbox.com/scl/fi/4u5oc5xnglbl7cyadyjul/Credit.pdf?rlkey=mxqnt2oi349s1ssl3rrebf0x0&st=9ekqtrg7&dl=0"
-                className="text-link"
-              >
-                Credit Collections Paper
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.dropbox.com/scl/fi/ckhp4eq5tq1ufbrblibao/cesifo1_wp12030.pdf?rlkey=qvnazf0ih85r4eidet603jlux&st=07teihue&dl=0"
-                className="text-link"
-              >
-                Air Pollution & Sentiment Paper
-              </a>
-            </li>
+            {pageContent.paperLinks.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="text-link">
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
