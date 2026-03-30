@@ -187,6 +187,11 @@ p {
   gap: 4px;
 }
 
+.hero-side {
+  display: grid;
+  gap: 18px;
+}
+
 .section-eyebrow {
   margin: 0;
   color: var(--accent);
@@ -194,6 +199,15 @@ p {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 720px;
 }
 
 .meta-panel {
@@ -208,6 +222,41 @@ p {
 .meta-panel h2 {
   font-size: 1.15rem;
   margin-bottom: 14px;
+}
+
+.profile-visual {
+  position: relative;
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 320px;
+  border: 1px solid rgba(17, 75, 95, 0.12);
+  box-shadow: var(--shadow);
+  background: #071d2f;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center center;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.profile-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px;
+  color: #fff7ef;
+  background: linear-gradient(180deg, rgba(5, 13, 22, 0.02), rgba(5, 13, 22, 0.86));
+}
+
+.profile-caption p:last-child {
+  margin-bottom: 0;
 }
 
 .meta-list {
@@ -313,6 +362,53 @@ p {
     var(--paper);
 }
 
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.campus-card {
+  overflow: hidden;
+  border: 1px solid rgba(17, 75, 95, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 26px rgba(17, 75, 95, 0.08);
+}
+
+.campus-image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.campus-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.campus-card:hover .campus-image {
+  transform: scale(1.03);
+}
+
+.campus-body {
+  padding: 18px;
+}
+
+.campus-role {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.photo-credit {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,6 +510,7 @@ p {
 
 @media (max-width: 920px) {
   .hero-grid,
+  .campus-grid,
   .feature-grid,
   .highlight-grid,
   .page-grid,

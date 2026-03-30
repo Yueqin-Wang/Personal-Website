@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import SiteLayout from '../components/SiteLayout'
 import { makePageStaticProps } from '../lib/siteContent'
 
@@ -23,7 +24,18 @@ function ActionButton({ href, label, variant }) {
   )
 }
 
+function resolveAssetPath(basePath, src) {
+  if (!src) {
+    return src
+  }
+
+  return src.startsWith('http') ? src : `${basePath}${src}`
+}
+
 export default function Home({ site, pageContent }) {
+  const router = useRouter()
+  const profileImageSrc = resolveAssetPath(router.basePath, pageContent.profileImage.src)
+
   return (
     <SiteLayout title={pageContent.title} subtitle={pageContent.subtitle} site={site}>
       <section className="card hero-grid">
@@ -46,15 +58,29 @@ export default function Home({ site, pageContent }) {
           </div>
         </div>
 
-        <div className="meta-panel">
-          <h2>Quick View</h2>
-          <div className="meta-list">
-            {pageContent.metaItems.map((item) => (
-              <p key={item.label}>
-                <span>{item.label}</span>
-                {item.value}
-              </p>
-            ))}
+        <div className="hero-side">
+          <figure className="profile-visual">
+            <img
+              src={profileImageSrc}
+              alt={pageContent.profileImage.alt}
+              className="profile-image"
+            />
+            <figcaption className="profile-caption">
+              <p className="section-eyebrow">{pageContent.profileImage.eyebrow}</p>
+              <p>{pageContent.profileImage.caption}</p>
+            </figcaption>
+          </figure>
+
+          <div className="meta-panel">
+            <h2>Quick View</h2>
+            <div className="meta-list">
+              {pageContent.metaItems.map((item) => (
+                <p key={item.label}>
+                  <span>{item.label}</span>
+                  {item.value}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -68,6 +94,41 @@ export default function Home({ site, pageContent }) {
             <article className="card highlight-card" key={item.title}>
               <p className="section-eyebrow">{item.title}</p>
               <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="card">
+        <div className="section-heading">
+          <div className="section-title-row">
+            <h2>{pageContent.campusGalleryTitle}</h2>
+          </div>
+          <p className="section-intro">{pageContent.campusGalleryIntro}</p>
+        </div>
+        <div className="campus-grid">
+          {pageContent.campusGallery.map((item) => (
+            <article className="campus-card" key={item.institution}>
+              <div className="campus-image-wrap">
+                <img
+                  src={resolveAssetPath(router.basePath, item.imageSrc)}
+                  alt={item.imageAlt}
+                  className="campus-image"
+                />
+              </div>
+              <div className="campus-body">
+                <p className="paper-meta">{item.period}</p>
+                <h3>{item.institution}</h3>
+                <p className="campus-role">{item.role}</p>
+                <p>{item.description}</p>
+                <p className="photo-credit">
+                  Photo:{' '}
+                  <a href={item.creditHref} className="text-link" target="_blank" rel="noreferrer">
+                    {item.creditLabel}
+                  </a>{' '}
+                  · {item.licenseLabel}
+                </p>
+              </div>
             </article>
           ))}
         </div>

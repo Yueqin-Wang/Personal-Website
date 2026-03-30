@@ -7,7 +7,7 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
 
 ```json
 {
-  "kicker": "Yueqin Wang | Personal Website",
+  "kicker": "Yueqin Wang | Economics",
   "footerName": "Yueqin Wang",
   "footerLastUpdated": "March 30, 2026",
   "navigation": [
@@ -22,21 +22,27 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
 
 ```json
 {
-  "title": "王玥琴 Yueqin Wang",
-  "subtitle": "北京大学国家发展研究院交换博士生 | 四川大学经济学院博士生",
+  "title": "Yueqin Wang",
+  "subtitle": "Visiting Doctoral Student at the National School of Development, Peking University | PhD Candidate in Economics at Sichuan University",
   "hero": {
     "sectionTitle": "Research Profile",
     "paragraphs": [
-      "我目前在北京大学国家发展研究院进行交换学习，导师为易君健，同时在四川大学经济学院攻读西方经济学博士，导师为赵绍阳。",
-      "研究主要集中在健康经济学与劳动经济学，尤其关注医疗资源配置、教育与健康的人力资本结果，以及数字经济对家庭收入与就业选择的影响。"
+      "I am currently a visiting doctoral student at the National School of Development, Peking University, where I work with Junjian Yi. I am also a PhD candidate in Western Economics at the School of Economics, Sichuan University, supervised by Shaoyang Zhao.",
+      "My research interests lie in health economics and labor economics, with a particular focus on healthcare resource allocation, education and health outcomes, and the effects of digital platforms on household behavior and income."
     ],
     "tags": [
       "Health Economics",
       "Labor Economics",
-      "Medical Resource Allocation",
+      "Healthcare Resource Allocation",
       "Education and Health",
       "Digital Economy"
     ]
+  },
+  "profileImage": {
+    "src": "/images/profile/avatar.jpg",
+    "alt": "Illustrated avatar used on Yueqin Wang's personal website",
+    "eyebrow": "Profile Visual",
+    "caption": "An illustrated image from my personal collection used as the avatar of this website."
   },
   "ctaButtons": [
     { "href": "/research", "label": "View Research", "variant": "primary" },
@@ -44,23 +50,60 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
   ],
   "metaItems": [
     { "label": "Email", "value": "wangyueqin1228@163.com" },
-    { "label": "Current Position", "value": "Visiting Doctoral Student, NSD Peking University" },
+    { "label": "Current Affiliation", "value": "National School of Development, Peking University" },
     { "label": "Degree Program", "value": "PhD in Economics, Sichuan University" },
-    { "label": "Supervisors", "value": "Junjian Yi / Shaoyang Zhao" }
+    { "label": "Supervisors", "value": "Junjian Yi and Shaoyang Zhao" }
   ],
   "highlightsTitle": "Current Highlights",
   "highlights": [
     {
-      "title": "Forthcoming",
-      "description": "Academic and Health Outcomes of Online Education for Primary and Secondary Students: Evidence from COVID-19 is forthcoming in the Journal of Comparative Economics."
+      "title": "Current Position",
+      "description": "Visiting doctoral student at Peking University since September 2024 while continuing doctoral research at Sichuan University."
     },
     {
-      "title": "Current Working Paper",
-      "description": "医院考核激励与医疗服务体系高质量发展 focuses on how hospital evaluation incentives shape medical service delivery."
+      "title": "Research Focus",
+      "description": "Health economics, labor economics, healthcare delivery, educational inequality, and digital platforms in China."
     },
     {
-      "title": "Recent Publications",
-      "description": "Two 2025 publications study e-commerce and household income, as well as healthcare resource allocation and patient choice in rural China."
+      "title": "Recent Output",
+      "description": "Recent publications examine e-commerce and household income, rural healthcare resource allocation, and the academic and health effects of online education."
+    }
+  ],
+  "campusGalleryTitle": "Academic Journey",
+  "campusGalleryIntro": "Three campuses that mark the major stages of my academic training and research life.",
+  "campusGallery": [
+    {
+      "institution": "Peking University",
+      "period": "2024 - Present",
+      "role": "Visiting Doctoral Student, National School of Development",
+      "description": "My current visiting appointment is based at Peking University, where I continue my work in health and labor economics.",
+      "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/0/07/Weiming_Lake%2C_Peking_University%2C_2011042202.jpg",
+      "imageAlt": "Weiming Lake at Peking University",
+      "creditLabel": "Huangdan2060 via Wikimedia Commons",
+      "creditHref": "https://commons.wikimedia.org/wiki/File:Weiming_Lake,_Peking_University,_2011042202.jpg",
+      "licenseLabel": "CC0"
+    },
+    {
+      "institution": "Sichuan University",
+      "period": "2022 - Present",
+      "role": "PhD Candidate, School of Economics",
+      "description": "At Sichuan University I pursue doctoral research in Western Economics and build on my earlier undergraduate training there.",
+      "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Jiang%27an_Campus_of_Sichuan_University.JPG",
+      "imageAlt": "Jiang'an Campus of Sichuan University",
+      "creditLabel": "Panzer VI-II via Wikimedia Commons",
+      "creditHref": "https://commons.wikimedia.org/wiki/File:Jiang%27an_Campus_of_Sichuan_University.JPG",
+      "licenseLabel": "CC BY-SA 4.0"
+    },
+    {
+      "institution": "Central University of Finance and Economics",
+      "period": "2018 - 2021",
+      "role": "M.A. Student in Labor Economics",
+      "description": "My master's training in labor economics at CUFE shaped many of the research questions that still motivate my work today.",
+      "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/6/68/CUFEMB.jpg",
+      "imageAlt": "Main teaching building at the Central University of Finance and Economics",
+      "creditLabel": "Steveny5997 via Wikimedia Commons",
+      "creditHref": "https://commons.wikimedia.org/wiki/File:CUFEMB.jpg",
+      "licenseLabel": "Public domain"
     }
   ],
   "featuredResearchTitle": "Selected Research",
@@ -68,17 +111,17 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
     {
       "title": "Start a business or get a job? Rethinking the impacts of e-commerce on household income in China",
       "meta": "Applied Economics, 2025",
-      "summary": "Examines how e-commerce development reshapes household income composition and occupational choice in China."
+      "summary": "This paper studies how e-commerce development changes household income composition and reshapes the choice between entrepreneurship and wage employment."
     },
     {
       "title": "Healthcare resource allocation and patient choice: evidence from rural China",
       "meta": "International Journal for Equity in Health, 2025",
-      "summary": "Studies healthcare access and patient sorting under uneven medical resource allocation in rural China."
+      "summary": "This study examines how uneven healthcare resource allocation affects patient sorting and healthcare utilization in rural China."
     },
     {
       "title": "Academic and Health Outcomes of Online Education for Primary and Secondary Students: Evidence from COVID-19",
       "meta": "Journal of Comparative Economics, forthcoming",
-      "summary": "Evaluates the academic and health consequences of large-scale online education during the pandemic."
+      "summary": "This project evaluates the educational and health consequences of large-scale online learning during the pandemic."
     }
   ],
   "linksTitle": "Academic Links",
@@ -118,69 +161,69 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
 ```json
 {
   "title": "Research",
-  "subtitle": "已发表论文、工作论文与课题经历",
-  "publishedTitle": "已发表论文",
+  "subtitle": "Publications, working paper, and research projects",
+  "publishedTitle": "Published Papers",
   "publishedPapers": [
     {
-      "title": "刺激消费政策的动态影响研究：来自家电下乡的证据",
-      "meta": "张川川、王玥琴、杨汝岱，《经济学动态》2021 年第 12 期，第 110-123 页",
-      "summary": "围绕家电下乡政策，分析刺激消费政策的动态影响及其传导机制。"
+      "title": "The Dynamic Effects of Consumption-Stimulus Policies: Evidence from the Home Appliances to the Countryside Program",
+      "meta": "with Chuanchuan Zhang and Rudai Yang, Economic Perspectives, 2021 [in Chinese]",
+      "summary": "This paper studies the dynamic effects of a major consumption-stimulus policy and the channels through which durable-goods subsidies affect household behavior."
     },
     {
-      "title": "教育减负、家庭教育投入与教育不平等",
-      "meta": "张川川、王玥琴，《管理世界》2022 年第 9 期，第 83-95 页",
-      "summary": "讨论教育减负政策如何影响家庭教育投入，并进一步作用于教育不平等。"
+      "title": "Reducing Academic Burden, Household Educational Investment, and Educational Inequality",
+      "meta": "with Chuanchuan Zhang, Management World, 2022 [in Chinese]",
+      "summary": "This paper investigates how policies aimed at reducing academic burden reshape family educational investment and influence educational inequality."
     },
     {
       "title": "Start a business or get a job? Rethinking the impacts of e-commerce on household income in China",
-      "meta": "Yueqin Wang and Zizhe Zhang, Applied Economics, 2025, 1-18",
-      "summary": "重新审视电子商务扩张对中国家庭收入与创业就业选择的影响。"
+      "meta": "with Zizhe Zhang, Applied Economics, 2025",
+      "summary": "This article reassesses the impact of e-commerce expansion on household income and occupational choice in China."
     },
     {
       "title": "Healthcare resource allocation and patient choice: evidence from rural China",
-      "meta": "Shaoyang Zhao, Yueqin Wang, Yuxiao Chen, and Mei Zhou, International Journal for Equity in Health, 2025, 24(1): 87",
-      "summary": "基于中国农村地区数据，研究医疗资源配置与患者就医选择之间的关系。"
+      "meta": "with Shaoyang Zhao, Yuxiao Chen, and Mei Zhou, International Journal for Equity in Health, 2025",
+      "summary": "This study analyzes how healthcare resource distribution shapes patient choice in rural China."
     },
     {
       "title": "Academic and Health Outcomes of Online Education for Primary and Secondary Students: Evidence from COVID-19",
-      "meta": "Yueqin Wang, Chuanchuan Zhang, and Junsen Zhang, Journal of Comparative Economics, forthcoming",
-      "summary": "评估新冠疫情期间在线教育对中小学生学业与健康结果的影响。"
+      "meta": "with Chuanchuan Zhang and Junsen Zhang, Journal of Comparative Economics, forthcoming",
+      "summary": "This paper evaluates the academic and health consequences of online education for primary and secondary school students during COVID-19."
     }
   ],
-  "workingTitle": "工作论文",
+  "workingTitle": "Working Paper",
   "workingPapers": [
     {
-      "title": "医院考核激励与医疗服务体系高质量发展",
-      "meta": "赵绍阳、王玥琴、周魅",
-      "summary": "关注医院绩效考核激励如何影响医疗服务体系运行与高质量发展。"
+      "title": "Hospital Performance Incentives and the High-Quality Development of the Healthcare Service System",
+      "meta": "with Shaoyang Zhao and Mei Zhou",
+      "summary": "This project studies how hospital performance evaluation incentives affect service delivery and the broader quality of the healthcare system."
     }
   ],
-  "projectsTitle": "课题研究",
+  "projectsTitle": "Research Projects",
   "projects": [
     {
       "time": "2022 - 2023",
-      "title": "四川省基本医疗保险医疗服务项目支付情况梳理工作",
-      "role": "项目主要参与人",
-      "detail": "参与四川省医保支付项目梳理与研究支持工作。"
+      "title": "Review of Medical Service Payment Items in the Basic Medical Insurance System of Sichuan Province",
+      "role": "Major participant",
+      "detail": "Contributed to the review and organization of payment items under Sichuan Province's basic medical insurance system."
     },
     {
       "time": "2021.07 - 2021.12",
-      "title": "贵州省医保基金收支预算科学编制技术规范和实施细则",
-      "role": "贵州省医保局课题，项目参与人",
-      "detail": "参与医保基金预算编制规范与实施细则的研究和撰写。"
+      "title": "Technical Standards and Implementation Guidelines for Budgeting the Guizhou Medical Insurance Fund",
+      "role": "Research participant",
+      "detail": "Worked on project materials related to scientific budgeting standards and implementation guidelines for the Guizhou medical insurance fund."
     },
     {
       "time": "2018",
-      "title": "家用电器对女性时间分配的影响：基于家电下乡政策的研究",
-      "role": "中央财经大学研究生科研创新基金项目，项目负责人",
-      "detail": "以家电下乡政策为背景，研究家用电器普及对女性时间配置的影响。"
+      "title": "Household Appliances and Women's Time Allocation: Evidence from the Home Appliances to the Countryside Program",
+      "role": "Principal investigator, Graduate Research Innovation Fund, CUFE",
+      "detail": "Led a student research project on how durable-goods adoption affects women's time allocation within the household."
     }
   ],
-  "conferencesTitle": "学术会议",
+  "conferencesTitle": "Conference Participation",
   "conferences": [
-    "中国工业经济“消费经济学研究前沿暨发挥消费基础性作用”学术研讨会",
-    "香樟经济学（杭州）会议",
-    "中国劳动经济学者论坛"
+    "Workshop on Frontiers of Consumer Economics Research and the Fundamental Role of Consumption",
+    "Camphor Economics Conference (Hangzhou)",
+    "China Labor Economists Forum"
   ]
 }
 ```
@@ -190,72 +233,72 @@ Edit the JSON inside each section, then commit and push to `main` to publish the
 ```json
 {
   "title": "CV",
-  "subtitle": "教育背景、研究方向与学术经历",
-  "profileTitle": "个人概览",
-  "summary": "健康经济学与劳动经济学方向博士生，当前在北京大学国家发展研究院交换学习。网站内容依据简历整理，站内提供 PDF 简历下载。",
+  "subtitle": "Education, research interests, and academic experience",
+  "profileTitle": "Overview",
+  "summary": "I am a PhD candidate in economics working at the intersection of health economics and labor economics. This page provides an English overview of my academic background, research experience, and skills.",
   "profileItems": [
     { "label": "Email", "value": "wangyueqin1228@163.com" },
-    { "label": "Affiliation", "value": "National School of Development, Peking University" },
-    { "label": "Program", "value": "PhD in Economics, Sichuan University" },
-    { "label": "Research Fields", "value": "Health Economics, Labor Economics" }
+    { "label": "Current Affiliation", "value": "National School of Development, Peking University" },
+    { "label": "Degree Program", "value": "PhD in Economics, Sichuan University" },
+    { "label": "Research Fields", "value": "Health Economics and Labor Economics" }
   ],
   "downloadHref": "/wang-yueqin-cv.pdf",
   "downloadLabel": "Download PDF CV",
-  "educationTitle": "教育背景",
+  "educationTitle": "Education",
   "education": [
     {
-      "time": "2024.09 - 至今",
-      "institution": "北京大学国家发展研究院",
-      "detail": "交换博士生，导师：易君健"
+      "time": "2024.09 - Present",
+      "institution": "Peking University, National School of Development",
+      "detail": "Visiting Doctoral Student. Supervisor: Junjian Yi."
     },
     {
-      "time": "2022.09 - 至今",
-      "institution": "四川大学经济学院",
-      "detail": "西方经济学博士，导师：赵绍阳"
+      "time": "2022.09 - Present",
+      "institution": "Sichuan University, School of Economics",
+      "detail": "PhD Candidate in Western Economics. Supervisor: Shaoyang Zhao."
     },
     {
       "time": "2018.09 - 2021.06",
-      "institution": "中央财经大学经济学院",
-      "detail": "劳动经济学硕士，导师：张川川"
+      "institution": "Central University of Finance and Economics, School of Economics",
+      "detail": "M.A. in Labor Economics. Supervisor: Chuanchuan Zhang."
     },
     {
       "time": "2016.03 - 2018.06",
-      "institution": "四川大学经济学院",
-      "detail": "金融学本科二学位"
+      "institution": "Sichuan University, School of Economics",
+      "detail": "Second Bachelor's Degree in Finance."
     },
     {
       "time": "2014.09 - 2018.06",
-      "institution": "四川大学建筑与环境学院",
-      "detail": "环境工程本科"
+      "institution": "Sichuan University, College of Architecture and Environment",
+      "detail": "B.Eng. in Environmental Engineering."
     }
   ],
-  "fieldsTitle": "研究领域",
+  "fieldsTitle": "Research Fields",
   "fields": [
-    "健康经济学",
-    "劳动经济学"
+    "Health Economics",
+    "Labor Economics"
   ],
-  "honorsTitle": "奖励荣誉",
+  "honorsTitle": "Honors and Awards",
   "honors": [
-    "中央财经大学研究生学业奖学金（2018、2019、2020）",
-    "四川大学单项二等奖（2015）"
+    "Graduate Academic Scholarship, Central University of Finance and Economics (2018, 2019, 2020)",
+    "Second Prize, Special Merit Award, Sichuan University (2015)"
   ],
-  "skillsTitle": "技能与特长",
+  "skillsTitle": "Skills",
   "skills": [
-    "英语：雅思 6.5，具备较强的英文文献阅读与写作能力",
-    "软件：熟练使用 Stata，掌握 R 的基础研究分析",
-    "兴趣：登山，骑行"
+    "English: IELTS 6.5; strong academic reading and writing ability in English",
+    "Software: Stata (advanced), R (working knowledge)",
+    "Interests: hiking and cycling"
   ],
-  "experienceTitle": "研究与课题经历",
+  "experienceTitle": "Research Experience",
   "experience": [
-    "四川省基本医疗保险医疗服务项目支付情况梳理工作，项目主要参与人（2022 - 2023）",
-    "《贵州省医保基金收支预算科学编制技术规范和实施细则》，项目参与人（2021.07 - 2021.12）",
-    "《家用电器对女性时间分配的影响：基于家电下乡政策的研究》，项目负责人（2018）"
+    "Review of medical service payment items in the basic medical insurance system of Sichuan Province, major participant (2022 - 2023)",
+    "Technical standards and implementation guidelines for budgeting the Guizhou medical insurance fund, research participant (2021.07 - 2021.12)",
+    "Household appliances and women's time allocation: evidence from the Home Appliances to the Countryside Program, principal investigator (2018)"
   ],
-  "conferenceTitle": "学术会议",
+  "conferenceTitle": "Conference Participation",
   "conferenceItems": [
-    "中国工业经济“消费经济学研究前沿暨发挥消费基础性作用”学术研讨会",
-    "香樟经济学（杭州）会议",
-    "中国劳动经济学者论坛"
+    "Workshop on Frontiers of Consumer Economics Research and the Fundamental Role of Consumption",
+    "Camphor Economics Conference (Hangzhou)",
+    "China Labor Economists Forum"
   ]
 }
 ```
